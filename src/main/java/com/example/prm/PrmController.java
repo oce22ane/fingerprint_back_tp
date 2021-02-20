@@ -20,7 +20,7 @@ public class PrmController {
 
 
     @PostMapping(path="/add") // Map ONLY POST Requests
-    public @ResponseBody String addNewUser (@RequestParam Integer compteur
+    public @ResponseBody String addNewPrm (@RequestParam Integer compteur
             , @RequestParam String cc, @RequestParam Date date, @RequestParam String fingerprint ) {
         // @ResponseBody means the returned String is the response, not a view name
         // @RequestParam means it is a parameter from the GET or POST request

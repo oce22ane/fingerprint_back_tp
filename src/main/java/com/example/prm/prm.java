@@ -1,5 +1,6 @@
 package com.example.prm;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Date;
 
 
@@ -8,6 +9,7 @@ public class prm {
 
     private Integer compteur;
 
+    @Id
     private String cc;
 
     private Date date;
