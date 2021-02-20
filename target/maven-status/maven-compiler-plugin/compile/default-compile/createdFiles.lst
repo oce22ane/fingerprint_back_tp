@@ -1,2 +1,4 @@
-PrmController.class
-Application.class
+com\example\prm\Application.class
+com\example\prm\prm.class
+com\example\prm\PrmController.class
+com\example\prm\PrmRepository.class
