@@ -6,8 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 
-
-@Controller
+@RestController
 public class PrmController {
 
     @Autowired
