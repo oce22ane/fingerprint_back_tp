@@ -1,10 +1,10 @@
 package com.example.prm;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
+import java.util.List;
 
 @RestController
 public class PrmController {
@@ -36,8 +36,46 @@ public class PrmController {
     @GetMapping(path="/all")
     public @ResponseBody
     Iterable<prm> getAllPrm() {
-        // This returns a JSON or XML with the users
         return prmRepository.findAll();
     }
 
+    @GetMapping(path="/nbVisite")
+    public @ResponseBody
+    long getCountPrm() {
+        return prmRepository.count();
+    }
+
+    @GetMapping(path="/nbCollisionH")
+    public @ResponseBody
+    long getCountCollisionH() {
+        List<Integer> listNb = prmRepository.findNbCollision();
+        int nb =0;
+        for( int value : listNb ) {
+            nb = nb + value;
+        }
+        return nb;
+    }
+
+
+    @GetMapping(path="/nbdiff")
+    public @ResponseBody
+    long getCountDiff() {
+        List<Integer> listNb = prmRepository.findNbDiff();
+        int nb =0;
+        for( int value : listNb ) {
+            nb = nb + value;
+        }
+        return nb;
+    }
+
+    @GetMapping(path="/nbVraiCollision")
+    public @ResponseBody
+    long getCountVraiCollision() {
+        List<Integer> listNb = prmRepository.findNbVraiCollision();
+        int nb =0;
+        for( int value : listNb ) {
+            nb = nb + value;
+        }
+        return nb;
+    }
 }
